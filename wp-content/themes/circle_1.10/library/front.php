@@ -185,6 +185,8 @@ function kopa_front_enqueue_scripts() {
 
         /* STYLESHEETs */
 
+        wp_enqueue_style('cbaron-css', $dir . '/index.min.css', array(), NULL);
+        /*
         wp_enqueue_style('kopa-reset', $dir . '/css/reset.css', array(), NULL);
         wp_enqueue_style('kopa-retina.less', $dir . '/css/retina.less', array(), NULL);
         wp_enqueue_style('kopa-bootstrap', $dir . '/css/bootstrap.css', array(), NULL);
@@ -198,6 +200,7 @@ function kopa_front_enqueue_scripts() {
         wp_enqueue_style('kopa-bootstrap-responsive', $dir . '/css/bootstrap-responsive.css', array(), NULL);
         wp_enqueue_style('kopa-responsive', $dir . '/css/responsive.css', array(), NULL);
         wp_enqueue_style('kopa-jquery-pie-chart-style', $dir . '/css/jquery.easy-pie-chart.css', array(), NULL);
+        /*
 
         if ($is_IE) {
             wp_register_style('kopa-ie', $dir . '/css/ie.css', array(), NULL);
@@ -215,6 +218,12 @@ function kopa_front_enqueue_scripts() {
 
 
         /* JAVASCRIPTs */
+
+        wp_enqueue_script( 'cbaron', '/wp-includes/js/index.min.js', array(), NULL, FALSE );
+        wp_localize_script( 'cbaron', 'kopa_front_variable', kopa_front_localize_script() );
+
+
+        /*
         wp_enqueue_script('kopa-google-api', 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL, TRUE);
         wp_enqueue_script('kopa-google-fonts', $dir . '/js/google-fonts.js', array('kopa-google-api'), NULL, TRUE);
 
@@ -222,10 +231,8 @@ function kopa_front_enqueue_scripts() {
             wp_enqueue_script('kopa-html5', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array(), NULL);
             wp_enqueue_script('kopa-css3', 'http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js', array(), NULL);
         }
+        
         wp_enqueue_script('jquery');
-        wp_localize_script('jquery', 'kopa_front_variable', kopa_front_localize_script());
-
-        /* wp_enqueue_script( 'jquery', '/wp-includes/js/index.min.js' ); */
 
         wp_enqueue_script('kopa-bootstrap', $dir . '/js/bootstrap.min.js', array('jquery'), NULL, TRUE);
         wp_enqueue_script('kopa-bootstrap-tooltip', $dir . '/js/bootstrap-tooltip.js', array('jquery'), NULL, TRUE);
@@ -253,6 +260,7 @@ function kopa_front_enqueue_scripts() {
         if (is_single() || is_page()) {
             wp_enqueue_script('comment-reply');
         }
+        */
     }
 }
 
