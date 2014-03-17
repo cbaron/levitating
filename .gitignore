@@ -15,7 +15,8 @@
 /*
 !.gitignore
 !wp-content/
-!wp-includes/js/*
+!wp-includes/
+!config/
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
@@ -33,3 +34,8 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !wp-content/themes/circle_1.10/
+
+wp-includes/*
+!wp-includes/js/
+
+config/grunt/node_modules/*
