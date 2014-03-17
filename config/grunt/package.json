@@ -5,6 +5,7 @@
     "grunt": "~0.4.2",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-http": "~1.1.0",
-    "grunt-contrib-cssmin": "~0.9.0"
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-less": "~0.10.0"
   }
 }

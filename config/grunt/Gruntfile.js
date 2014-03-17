@@ -75,6 +75,16 @@ module.exports = function( grunt ) {
           }
         },
 
+        less: {
+            retina: {
+                options: {
+                },
+                files: {
+                    '../../wp-content/themes/circle_1.10/css/retina.css': '../../wp-content/themes/circle_1.10/css/retina.less'
+                }
+            }
+        },
+
         cssmin: {
             options: {
                 report: 'gzip'
@@ -87,7 +97,7 @@ module.exports = function( grunt ) {
 
                         [
                             themes( 'circle_1.10/css/reset.css' ),
-                            /* themes( 'circle_1.10/css/retina.less' ), */
+                            themes( 'circle_1.10/css/retina.css' ),
                             themes( 'circle_1.10/css/bootstrap.css' ),
                             themes( 'circle_1.10/css/circle-hover.css' ),
                             themes( 'circle_1.10/css/flexslider.css' ),
@@ -109,12 +119,14 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-http');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task(s).
   grunt.registerTask( 'default', [
       'http:webfont',
       'http:ieShimOne',
       'http:ieShimTwo',
+      'less:retina',
       'cssmin:combine',
       'uglify'
   ] );
